@@ -159,6 +159,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Contraseña).HasMaxLength(100);
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.Nombre).HasMaxLength(100);
+            entity.HasData(
+                new Usuario { Id = 1, Nombre = "admin", Email = "admin@unphu.edu.do", Contraseña = "123456" }
+            );
         });
 
         OnModelCreatingPartial(modelBuilder);
